@@ -1,0 +1,47 @@
+function checkout(){
+
+  if(cart.length === 0){
+    showToast("السلة فارغة");
+    return;
+  }
+
+  let message = "🛍️ *طلب جديد من متجر LAVINA*%0A%0A";
+
+  message += "📦 *المنتجات:*%0A";
+
+  let total = 0;
+
+  cart.forEach((item, index) => {
+
+    const product = products.find(p => p.id === item.id);
+
+    const subtotal = product.price * item.qty;
+
+    total += subtotal;
+
+    message +=
+      `${index + 1}. ${product.name}%0A` +
+      `   الكمية: ${item.qty}%0A` +
+      `   السعر: ${product.price} DH%0A` +
+      `   المجموع: ${subtotal} DH%0A%0A`;
+  });
+
+  message += "━━━━━━━━━━━━━━%0A";
+  message += `💰 *المجموع النهائي: ${total} DH*%0A%0A`;
+
+  message += "👤 *معلومات الزبون:*%0A";
+  message += "الاسم: %0A";
+  message += "الهاتف: %0A";
+  message += "العنوان: %0A";
+  message += "المدينة: %0A";
+  message += "ملاحظات: %0A%0A";
+
+  message += "أريد تأكيد هذا الطلب وشكراً ❤️";
+
+  const whatsappNumber = "212713156475";
+
+  const whatsappURL =
+    `https://wa.me/${whatsappNumber}?text=${message}`;
+
+  window.open(whatsappURL, "_blank");
+}
