@@ -14,12 +14,17 @@
 }
 
 :root{
-  --black:#111;
+  --black:#111111;
   --pink:#d85b83;
+  --pink2:#f4d5df;
   --light:#fff7fa;
   --gray:#777;
-  --border:#eee;
-  --white:#fff;
+  --border:#eeeeee;
+  --white:#ffffff;
+}
+
+html{
+  scroll-behavior:smooth;
 }
 
 body{
@@ -38,9 +43,9 @@ button{
 
 .topbar{
   background:#111;
-  color:white;
+  color:#fff;
   text-align:center;
-  padding:9px;
+  padding:10px;
   font-size:13px;
 }
 
@@ -50,7 +55,7 @@ header{
   z-index:1000;
   background:rgba(255,255,255,.96);
   backdrop-filter:blur(12px);
-  border-bottom:1px solid #eee;
+  border-bottom:1px solid var(--border);
 }
 
 .nav{
@@ -87,6 +92,10 @@ header{
   font-size:14px;
 }
 
+.navlinks a:hover{
+  color:var(--pink);
+}
+
 .actions{
   display:flex;
   align-items:center;
@@ -95,12 +104,18 @@ header{
 
 .iconbtn{
   border:1px solid #eee;
-  background:white;
+  background:#fff;
   width:42px;
   height:42px;
   border-radius:50%;
   font-size:18px;
   position:relative;
+  transition:.2s;
+}
+
+.iconbtn:hover{
+  background:#111;
+  color:#fff;
 }
 
 .cart-count{
@@ -108,7 +123,7 @@ header{
   top:-5px;
   right:-4px;
   background:var(--pink);
-  color:white;
+  color:#fff;
   width:19px;
   height:19px;
   border-radius:50%;
@@ -123,8 +138,8 @@ header{
   display:flex;
   align-items:center;
   background:
-  linear-gradient(90deg,rgba(0,0,0,.62),rgba(0,0,0,.05)),
-  url("https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1800&q=85")
+  linear-gradient(90deg,rgba(0,0,0,.68),rgba(0,0,0,.12)),
+  url("https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1800&q=90")
   center/cover;
 }
 
@@ -133,7 +148,7 @@ header{
   width:100%;
   margin:auto;
   padding:70px 25px;
-  color:white;
+  color:#fff;
 }
 
 .hero small{
@@ -157,11 +172,17 @@ header{
 .hero-btn{
   margin-top:28px;
   padding:15px 28px;
-  background:white;
+  background:#fff;
   border:0;
   border-radius:30px;
   font-weight:bold;
   font-size:15px;
+  transition:.2s;
+}
+
+.hero-btn:hover{
+  background:var(--pink);
+  color:#fff;
 }
 
 .section{
@@ -184,32 +205,9 @@ header{
   color:var(--gray);
 }
 
-.categories{
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-bottom:35px;
-}
-
-.cat-btn{
-  border:1px solid #ddd;
-  background:white;
-  padding:11px 20px;
-  border-radius:30px;
-  transition:.2s;
-}
-
-.cat-btn.active,
-.cat-btn:hover{
-  background:#111;
-  color:white;
-  border-color:#111;
-}
-
 .searchbox{
   max-width:650px;
-  margin:0 auto 35px;
+  margin:0 auto 30px;
   position:relative;
 }
 
@@ -220,13 +218,42 @@ header{
   border-radius:35px;
   outline:none;
   font-size:15px;
+  transition:.2s;
+}
+
+.searchbox input:focus{
+  border-color:var(--pink);
+  box-shadow:0 0 0 3px rgba(216,91,131,.08);
 }
 
 .searchbox span{
   position:absolute;
   right:20px;
-  top:14px;
-  font-size:20px;
+  top:13px;
+  font-size:21px;
+}
+
+.categories{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:35px;
+}
+
+.cat-btn{
+  border:1px solid #ddd;
+  background:#fff;
+  padding:11px 20px;
+  border-radius:30px;
+  transition:.2s;
+}
+
+.cat-btn.active,
+.cat-btn:hover{
+  background:#111;
+  color:#fff;
+  border-color:#111;
 }
 
 .products{
@@ -236,7 +263,7 @@ header{
 }
 
 .card{
-  background:white;
+  background:#fff;
   border:1px solid #eee;
   overflow:hidden;
   border-radius:14px;
@@ -271,7 +298,7 @@ header{
   top:12px;
   right:12px;
   background:#111;
-  color:white;
+  color:#fff;
   padding:6px 10px;
   border-radius:20px;
   font-size:11px;
@@ -318,14 +345,28 @@ header{
   width:100%;
   border:0;
   background:#111;
-  color:white;
+  color:#fff;
   padding:12px;
   border-radius:8px;
   font-weight:bold;
+  transition:.2s;
 }
 
 .add:hover{
   background:var(--pink);
+}
+
+.details-btn{
+  width:100%;
+  border:0;
+  background:none;
+  margin-top:10px;
+  color:#777;
+  font-size:12px;
+}
+
+.details-btn:hover{
+  color:var(--pink);
 }
 
 .features{
@@ -339,7 +380,7 @@ header{
 }
 
 .feature{
-  background:white;
+  background:#fff;
   padding:25px;
   text-align:center;
   border-radius:14px;
@@ -362,7 +403,7 @@ header{
 
 .newsletter{
   background:#111;
-  color:white;
+  color:#fff;
   text-align:center;
   padding:70px 20px;
 }
@@ -394,7 +435,7 @@ header{
 
 .newsletter-form button{
   background:var(--pink);
-  color:white;
+  color:#fff;
   border:0;
   padding:0 22px;
   border-radius:7px;
@@ -429,7 +470,7 @@ footer{
   left:0;
   height:100%;
   width:min(430px,100%);
-  background:white;
+  background:#fff;
   z-index:1600;
   transform:translateX(-100%);
   transition:.3s;
@@ -459,6 +500,7 @@ footer{
   width:38px;
   height:38px;
   border-radius:50%;
+  font-size:20px;
 }
 
 .cart-items{
@@ -510,7 +552,7 @@ footer{
 
 .quantity button{
   border:1px solid #ddd;
-  background:white;
+  background:#fff;
   width:27px;
   height:27px;
   border-radius:5px;
@@ -540,11 +582,16 @@ footer{
 .checkout{
   width:100%;
   border:0;
-  background:#111;
-  color:white;
+  background:#25D366;
+  color:#fff;
   padding:15px;
   border-radius:8px;
   font-weight:bold;
+  font-size:15px;
+}
+
+.checkout:hover{
+  background:#1da851;
 }
 
 /* MODAL */
@@ -568,7 +615,7 @@ footer{
   width:min(900px,100%);
   max-height:90vh;
   overflow:auto;
-  background:white;
+  background:#fff;
   border-radius:16px;
   position:relative;
 }
@@ -579,11 +626,12 @@ footer{
   left:15px;
   z-index:5;
   border:0;
-  background:white;
+  background:#fff;
   width:40px;
   height:40px;
   border-radius:50%;
   box-shadow:0 2px 10px #ddd;
+  font-size:20px;
 }
 
 .modal-content{
@@ -621,11 +669,15 @@ footer{
 .modal-add{
   width:100%;
   background:#111;
-  color:white;
+  color:#fff;
   border:0;
   padding:15px;
   border-radius:8px;
   font-weight:bold;
+}
+
+.modal-add:hover{
+  background:var(--pink);
 }
 
 /* TOAST */
@@ -635,7 +687,7 @@ footer{
   bottom:25px;
   right:25px;
   background:#111;
-  color:white;
+  color:#fff;
   padding:14px 20px;
   border-radius:8px;
   z-index:3000;
@@ -652,6 +704,7 @@ footer{
 /* MOBILE */
 
 @media(max-width:1000px){
+
   .products{
     grid-template-columns:repeat(3,1fr);
   }
@@ -666,6 +719,7 @@ footer{
 }
 
 @media(max-width:700px){
+
   .products{
     grid-template-columns:repeat(2,1fr);
     gap:12px;
@@ -721,6 +775,7 @@ footer{
 }
 
 @media(max-width:420px){
+
   .products{
     grid-template-columns:1fr 1fr;
   }
@@ -731,6 +786,10 @@ footer{
 
   .price strong{
     font-size:15px;
+  }
+
+  .card h3{
+    min-height:34px;
   }
 }
 </style>
@@ -757,19 +816,34 @@ footer{
     </ul>
 
     <div class="actions">
-      <button class="iconbtn" onclick="scrollToProducts()">⌕</button>
 
-      <button class="iconbtn" onclick="openCart()">
+      <button
+        class="iconbtn"
+        onclick="scrollToProducts()"
+        aria-label="البحث"
+      >
+        ⌕
+      </button>
+
+      <button
+        class="iconbtn"
+        onclick="openCart()"
+        aria-label="السلة"
+      >
         🛍
         <span class="cart-count" id="cartCount">0</span>
       </button>
+
     </div>
 
   </div>
 </header>
 
+
 <section class="hero" id="home">
+
   <div class="hero-content">
+
     <small>NEW COLLECTION 2026</small>
 
     <h1>
@@ -781,134 +855,292 @@ footer{
       لتمنحك إطلالة أنيقة وعصرية في كل مناسبة.
     </p>
 
-    <button class="hero-btn" onclick="scrollToProducts()">
+    <button
+      class="hero-btn"
+      onclick="scrollToProducts()"
+    >
       اكتشفي المجموعة
     </button>
+
   </div>
+
 </section>
+
 
 <section class="section" id="products">
 
   <div class="section-title">
+
     <h2>منتجاتنا</h2>
-    <p>اختاري القطعة التي تناسب ذوقك</p>
+
+    <p>
+      أكثر من 70 قطعة مختارة بعناية
+    </p>
+
   </div>
 
+
   <div class="searchbox">
+
     <span>⌕</span>
+
     <input
       type="text"
       id="search"
       placeholder="ابحثي عن منتج..."
       oninput="renderProducts()"
     >
+
   </div>
 
+
   <div class="categories">
-    <button class="cat-btn active" onclick="filterCategory('الكل',this)">
+
+    <button
+      class="cat-btn active"
+      onclick="filterCategory('الكل',this)"
+    >
       الكل
     </button>
 
-    <button class="cat-btn" onclick="filterCategory('فساتين',this)">
+    <button
+      class="cat-btn"
+      onclick="filterCategory('فساتين',this)"
+    >
       فساتين
     </button>
 
-    <button class="cat-btn" onclick="filterCategory('حقائب',this)">
+    <button
+      class="cat-btn"
+      onclick="filterCategory('حقائب',this)"
+    >
       حقائب
     </button>
 
-    <button class="cat-btn" onclick="filterCategory('أحذية',this)">
+    <button
+      class="cat-btn"
+      onclick="filterCategory('أحذية',this)"
+    >
       أحذية
     </button>
 
-    <button class="cat-btn" onclick="filterCategory('إكسسوارات',this)">
+    <button
+      class="cat-btn"
+      onclick="filterCategory('إكسسوارات',this)"
+    >
       إكسسوارات
     </button>
 
-    <button class="cat-btn" onclick="filterCategory('ملابس',this)">
+    <button
+      class="cat-btn"
+      onclick="filterCategory('ملابس',this)"
+    >
       ملابس
     </button>
+
   </div>
 
-  <div class="products" id="productsGrid"></div>
+
+  <div
+    class="products"
+    id="productsGrid"
+  ></div>
 
 </section>
 
-<section class="features" id="about">
+
+<section
+  class="features"
+  id="about"
+>
+
   <div class="section">
 
     <div class="section-title">
-      <h2>لماذا LAVINA؟</h2>
-      <p>نحن نهتم بكل تفاصيل تجربتك</p>
+
+      <h2>
+        لماذا LAVINA؟
+      </h2>
+
+      <p>
+        نهتم بكل تفاصيل تجربة التسوق
+      </p>
+
     </div>
+
 
     <div class="feature-grid">
 
       <div class="feature">
-        <div class="feature-icon">🚚</div>
-        <h3>توصيل سريع</h3>
-        <p>نوصل طلبك إلى باب منزلك في أسرع وقت ممكن.</p>
+
+        <div class="feature-icon">
+          🚚
+        </div>
+
+        <h3>
+          توصيل سريع
+        </h3>
+
+        <p>
+          نوصل طلبك إلى باب منزلك في أسرع وقت ممكن.
+        </p>
+
       </div>
 
-      <div class="feature">
-        <div class="feature-icon">💳</div>
-        <h3>دفع آمن</h3>
-        <p>طرق دفع سهلة وآمنة لشراء منتجاتك المفضلة.</p>
-      </div>
 
       <div class="feature">
-        <div class="feature-icon">↩</div>
-        <h3>إرجاع سهل</h3>
-        <p>سياسة إرجاع بسيطة تمنحك راحة أكبر عند التسوق.</p>
+
+        <div class="feature-icon">
+          💳
+        </div>
+
+        <h3>
+          دفع آمن
+        </h3>
+
+        <p>
+          طرق دفع سهلة وآمنة لشراء منتجاتك المفضلة.
+        </p>
+
       </div>
 
+
       <div class="feature">
-        <div class="feature-icon">♥</div>
-        <h3>اختيارات مميزة</h3>
-        <p>منتجات مختارة بعناية لتناسب المرأة العصرية.</p>
+
+        <div class="feature-icon">
+          ↩
+        </div>
+
+        <h3>
+          إرجاع سهل
+        </h3>
+
+        <p>
+          سياسة إرجاع بسيطة تمنحك راحة أكبر.
+        </p>
+
+      </div>
+
+
+      <div class="feature">
+
+        <div class="feature-icon">
+          ♥
+        </div>
+
+        <h3>
+          اختيارات مميزة
+        </h3>
+
+        <p>
+          منتجات مختارة بعناية للمرأة العصرية.
+        </p>
+
       </div>
 
     </div>
+
   </div>
+
 </section>
 
-<section class="newsletter" id="contact">
-  <h2>انضمي إلى عالم LAVINA</h2>
-  <p>احصلي على آخر العروض والمجموعات الجديدة.</p>
 
-  <form class="newsletter-form" onsubmit="subscribe(event)">
-    <input type="email" required placeholder="البريد الإلكتروني">
-    <button type="submit">اشتراك</button>
+<section
+  class="newsletter"
+  id="contact"
+>
+
+  <h2>
+    انضمي إلى عالم LAVINA
+  </h2>
+
+  <p>
+    احصلي على آخر العروض والمجموعات الجديدة.
+  </p>
+
+  <form
+    class="newsletter-form"
+    onsubmit="subscribe(event)"
+  >
+
+    <input
+      type="email"
+      required
+      placeholder="البريد الإلكتروني"
+    >
+
+    <button type="submit">
+      اشتراك
+    </button>
+
   </form>
+
 </section>
+
 
 <footer>
+
   © 2026 LAVINA — جميع الحقوق محفوظة
+
 </footer>
 
 
 <!-- CART -->
 
-<div class="overlay" id="overlay" onclick="closeCart()"></div>
+<div
+  class="overlay"
+  id="overlay"
+  onclick="closeCart()"
+></div>
 
-<aside class="cart" id="cart">
+
+<aside
+  class="cart"
+  id="cart"
+>
 
   <div class="cart-head">
-    <h2>سلة المشتريات</h2>
-    <button class="close" onclick="closeCart()">×</button>
+
+    <h2>
+      سلة المشتريات
+    </h2>
+
+    <button
+      class="close"
+      onclick="closeCart()"
+    >
+      ×
+    </button>
+
   </div>
 
-  <div class="cart-items" id="cartItems"></div>
+
+  <div
+    class="cart-items"
+    id="cartItems"
+  ></div>
+
 
   <div class="cart-footer">
 
     <div class="total">
-      <span>المجموع</span>
-      <span id="cartTotal">0 DH</span>
+
+      <span>
+        المجموع
+      </span>
+
+      <span id="cartTotal">
+        0 DH
+      </span>
+
     </div>
 
-    <button class="checkout" onclick="checkout()">
-      إتمام الطلب
+
+    <button
+      class="checkout"
+      onclick="checkout()"
+    >
+      📱 إتمام الطلب عبر واتساب
     </button>
 
   </div>
@@ -918,31 +1150,60 @@ footer{
 
 <!-- PRODUCT MODAL -->
 
-<div class="modal" id="productModal">
+<div
+  class="modal"
+  id="productModal"
+>
 
   <div class="modal-box">
 
-    <button class="modal-close" onclick="closeProduct()">×</button>
+    <button
+      class="modal-close"
+      onclick="closeProduct()"
+    >
+      ×
+    </button>
+
 
     <div class="modal-content">
 
-      <img id="modalImage" src="" alt="">
+      <img
+        id="modalImage"
+        src=""
+        alt=""
+      >
+
 
       <div class="modal-info">
 
-        <div class="cat" id="modalCategory"></div>
+        <div
+          class="cat"
+          id="modalCategory"
+        ></div>
+
 
         <h2 id="modalTitle"></h2>
 
-        <div class="rating">★★★★★</div>
+
+        <div class="rating">
+          ★★★★★
+        </div>
+
 
         <div class="price">
+
           <strong id="modalPrice"></strong>
+
         </div>
+
 
         <p id="modalDescription"></p>
 
-        <button class="modal-add" id="modalAdd">
+
+        <button
+          class="modal-add"
+          id="modalAdd"
+        >
           أضيفي إلى السلة
         </button>
 
@@ -954,699 +1215,719 @@ footer{
 
 </div>
 
-<div class="toast" id="toast"></div>
+
+<div
+  class="toast"
+  id="toast"
+></div>
 
 
 <script>
 
+/* =====================================
+   إعدادات المتجر
+===================================== */
+
+const WHATSAPP_NUMBER = "212713156475";
+
+
+/* =====================================
+   المنتجات
+===================================== */
+
 const products = [
 
-/* FASHION */
-
 {
- id:1,
- name:"فستان سهرة أسود",
- category:"فساتين",
- price:599,
- old:799,
- image:"https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=900&q=85"
+id:1,
+name:"فستان سهرة أسود",
+category:"فساتين",
+price:599,
+old:799,
+image:"https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:2,
- name:"فستان وردي أنيق",
- category:"فساتين",
- price:479,
- old:649,
- image:"https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=900&q=85"
+id:2,
+name:"فستان وردي أنيق",
+category:"فساتين",
+price:479,
+old:649,
+image:"https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:3,
- name:"فستان أبيض صيفي",
- category:"فساتين",
- price:429,
- old:549,
- image:"https://images.unsplash.com/photo-1591369822096-ffd140ec948f?auto=format&fit=crop&w=900&q=85"
+id:3,
+name:"فستان أبيض صيفي",
+category:"فساتين",
+price:429,
+old:549,
+image:"https://images.unsplash.com/photo-1591369822096-ffd140ec948f?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:4,
- name:"فستان ساتان فاخر",
- category:"فساتين",
- price:699,
- old:899,
- image:"https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=900&q=85"
+id:4,
+name:"فستان ساتان فاخر",
+category:"فساتين",
+price:699,
+old:899,
+image:"https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:5,
- name:"فستان بيج ناعم",
- category:"فساتين",
- price:459,
- old:599,
- image:"https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=85"
+id:5,
+name:"فستان بيج ناعم",
+category:"فساتين",
+price:459,
+old:599,
+image:"https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:6,
- name:"فستان أسود كلاسيكي",
- category:"فساتين",
- price:529,
- old:699,
- image:"https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=900&q=85"
+id:6,
+name:"فستان أسود كلاسيكي",
+category:"فساتين",
+price:529,
+old:699,
+image:"https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:7,
- name:"فستان صيفي زهري",
- category:"فساتين",
- price:389,
- old:499,
- image:"https://images.unsplash.com/photo-1539008835657-9e8e9680c956?auto=format&fit=crop&w=900&q=85"
+id:7,
+name:"فستان صيفي زهري",
+category:"فساتين",
+price:389,
+old:499,
+image:"https://images.unsplash.com/photo-1539008835657-9e8e9680c956?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:8,
- name:"فستان طويل أخضر",
- category:"فساتين",
- price:579,
- old:729,
- image:"https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=900&q=85"
+id:8,
+name:"فستان طويل أخضر",
+category:"فساتين",
+price:579,
+old:729,
+image:"https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:9,
- name:"فستان كريمي فاخر",
- category:"فساتين",
- price:629,
- old:799,
- image:"https://images.unsplash.com/photo-1612336307429-8a898d10e223?auto=format&fit=crop&w=900&q=85"
+id:9,
+name:"فستان كريمي فاخر",
+category:"فساتين",
+price:629,
+old:799,
+image:"https://images.unsplash.com/photo-1612336307429-8a898d10e223?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:10,
- name:"فستان مناسبات فاخر",
- category:"فساتين",
- price:749,
- old:999,
- image:"https://images.unsplash.com/photo-1566479179817-c0e2754e9e7d?auto=format&fit=crop&w=900&q=85"
+id:10,
+name:"فستان مناسبات فاخر",
+category:"فساتين",
+price:749,
+old:999,
+image:"https://images.unsplash.com/photo-1566479179817-c0e2754e9e7d?auto=format&fit=crop&w=900&q=90"
 },
 
-/* BAGS */
-
 {
- id:11,
- name:"حقيبة جلد سوداء",
- category:"حقائب",
- price:349,
- old:449,
- image:"https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=900&q=85"
+id:11,
+name:"حقيبة جلد سوداء",
+category:"حقائب",
+price:349,
+old:449,
+image:"https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:12,
- name:"حقيبة بيج فاخرة",
- category:"حقائب",
- price:379,
- old:499,
- image:"https://images.unsplash.com/photo-1594223274512-ad4803739b7c?auto=format&fit=crop&w=900&q=85"
+id:12,
+name:"حقيبة بيج فاخرة",
+category:"حقائب",
+price:379,
+old:499,
+image:"https://images.unsplash.com/photo-1594223274512-ad4803739b7c?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:13,
- name:"حقيبة كتف بنية",
- category:"حقائب",
- price:299,
- old:399,
- image:"https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?auto=format&fit=crop&w=900&q=85"
+id:13,
+name:"حقيبة كتف بنية",
+category:"حقائب",
+price:299,
+old:399,
+image:"https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:14,
- name:"حقيبة صغيرة وردية",
- category:"حقائب",
- price:269,
- old:349,
- image:"https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=900&q=85"
+id:14,
+name:"حقيبة صغيرة وردية",
+category:"حقائب",
+price:269,
+old:349,
+image:"https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:15,
- name:"حقيبة سوداء صغيرة",
- category:"حقائب",
- price:289,
- old:379,
- image:"https://images.unsplash.com/photo-1564431515875-5d7b2f6d8f2d?auto=format&fit=crop&w=900&q=85"
+id:15,
+name:"حقيبة سوداء صغيرة",
+category:"حقائب",
+price:289,
+old:379,
+image:"https://images.unsplash.com/photo-1564431515875-5d7b2f6d8f2d?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:16,
- name:"حقيبة جلدية فاخرة",
- category:"حقائب",
- price:499,
- old:649,
- image:"https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=900&q=85"
+id:16,
+name:"حقيبة جلدية فاخرة",
+category:"حقائب",
+price:499,
+old:649,
+image:"https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:17,
- name:"حقيبة كروس أنيقة",
- category:"حقائب",
- price:319,
- old:429,
- image:"https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=900&q=85"
+id:17,
+name:"حقيبة كروس أنيقة",
+category:"حقائب",
+price:319,
+old:429,
+image:"https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:18,
- name:"حقيبة بيضاء عصرية",
- category:"حقائب",
- price:339,
- old:449,
- image:"https://images.unsplash.com/photo-1594223274512-ad4803739b7c?auto=format&fit=crop&w=900&q=85"
+id:18,
+name:"حقيبة بيضاء عصرية",
+category:"حقائب",
+price:339,
+old:449,
+image:"https://images.unsplash.com/photo-1594223274512-ad4803739b7c?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:19,
- name:"حقيبة سهرة",
- category:"حقائب",
- price:249,
- old:329,
- image:"https://images.unsplash.com/photo-1575032617751-6ddec208988c?auto=format&fit=crop&w=900&q=85"
+id:19,
+name:"حقيبة سهرة",
+category:"حقائب",
+price:249,
+old:329,
+image:"https://images.unsplash.com/photo-1575032617751-6ddec208988c?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:20,
- name:"حقيبة كبيرة يومية",
- category:"حقائب",
- price:399,
- old:499,
- image:"https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=900&q=85"
+id:20,
+name:"حقيبة كبيرة يومية",
+category:"حقائب",
+price:399,
+old:499,
+image:"https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=900&q=90"
 },
-
-/* SHOES */
 
 {
- id:21,
- name:"حذاء كعب أسود",
- category:"أحذية",
- price:399,
- old:499,
- image:"https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=900&q=85"
+id:21,
+name:"حذاء كعب أسود",
+category:"أحذية",
+price:399,
+old:499,
+image:"https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:22,
- name:"حذاء كعب بيج",
- category:"أحذية",
- price:429,
- old:549,
- image:"https://images.unsplash.com/photo-1535043934128-cf487c033a83?auto=format&fit=crop&w=900&q=85"
+id:22,
+name:"حذاء كعب بيج",
+category:"أحذية",
+price:429,
+old:549,
+image:"https://images.unsplash.com/photo-1535043934128-cf487c033a83?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:23,
- name:"حذاء أبيض رياضي",
- category:"أحذية",
- price:349,
- old:449,
- image:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85"
+id:23,
+name:"حذاء أبيض رياضي",
+category:"أحذية",
+price:349,
+old:449,
+image:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:24,
- name:"حذاء وردي",
- category:"أحذية",
- price:329,
- old:429,
- image:"https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=900&q=85"
+id:24,
+name:"حذاء وردي",
+category:"أحذية",
+price:329,
+old:429,
+image:"https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:25,
- name:"حذاء لوفر أسود",
- category:"أحذية",
- price:359,
- old:459,
- image:"https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=900&q=85"
+id:25,
+name:"حذاء لوفر أسود",
+category:"أحذية",
+price:359,
+old:459,
+image:"https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:26,
- name:"صندل صيفي فاخر",
- category:"أحذية",
- price:279,
- old:359,
- image:"https://images.unsplash.com/photo-1562273138-f46be4ebdf33?auto=format&fit=crop&w=900&q=85"
+id:26,
+name:"صندل صيفي فاخر",
+category:"أحذية",
+price:279,
+old:359,
+image:"https://images.unsplash.com/photo-1562273138-f46be4ebdf33?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:27,
- name:"حذاء كعب رفيع",
- category:"أحذية",
- price:449,
- old:579,
- image:"https://images.unsplash.com/photo-1515347619252-60a4bf4fff4f?auto=format&fit=crop&w=900&q=85"
+id:27,
+name:"حذاء كعب رفيع",
+category:"أحذية",
+price:449,
+old:579,
+image:"https://images.unsplash.com/photo-1515347619252-60a4bf4fff4f?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:28,
- name:"حذاء رياضي أنيق",
- category:"أحذية",
- price:379,
- old:479,
- image:"https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=900&q=85"
+id:28,
+name:"حذاء رياضي أنيق",
+category:"أحذية",
+price:379,
+old:479,
+image:"https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:29,
- name:"صندل بيج",
- category:"أحذية",
- price:259,
- old:329,
- image:"https://images.unsplash.com/photo-1603487742131-4160ec999306?auto=format&fit=crop&w=900&q=85"
+id:29,
+name:"صندل بيج",
+category:"أحذية",
+price:259,
+old:329,
+image:"https://images.unsplash.com/photo-1603487742131-4160ec999306?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:30,
- name:"بوت نسائي أسود",
- category:"أحذية",
- price:499,
- old:649,
- image:"https://images.unsplash.com/photo-1608256246200-53e6359b5f64?auto=format&fit=crop&w=900&q=85"
+id:30,
+name:"بوت نسائي أسود",
+category:"أحذية",
+price:499,
+old:649,
+image:"https://images.unsplash.com/photo-1608256246200-53e6359b5f64?auto=format&fit=crop&w=900&q=90"
 },
 
-/* ACCESSORIES */
-
 {
- id:31,
- name:"ساعة نسائية ذهبية",
- category:"إكسسوارات",
- price:299,
- old:399,
- image:"https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=900&q=85"
+id:31,
+name:"ساعة نسائية ذهبية",
+category:"إكسسوارات",
+price:299,
+old:399,
+image:"https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:32,
- name:"نظارة شمسية سوداء",
- category:"إكسسوارات",
- price:179,
- old:249,
- image:"https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=900&q=85"
+id:32,
+name:"نظارة شمسية سوداء",
+category:"إكسسوارات",
+price:179,
+old:249,
+image:"https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:33,
- name:"قلادة ذهبية",
- category:"إكسسوارات",
- price:149,
- old:199,
- image:"https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=900&q=85"
+id:33,
+name:"قلادة ذهبية",
+category:"إكسسوارات",
+price:149,
+old:199,
+image:"https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:34,
- name:"أقراط لؤلؤ",
- category:"إكسسوارات",
- price:119,
- old:159,
- image:"https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=900&q=85"
+id:34,
+name:"أقراط لؤلؤ",
+category:"إكسسوارات",
+price:119,
+old:159,
+image:"https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:35,
- name:"سوار ذهبي",
- category:"إكسسوارات",
- price:139,
- old:189,
- image:"https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=900&q=85"
+id:35,
+name:"سوار ذهبي",
+category:"إكسسوارات",
+price:139,
+old:189,
+image:"https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:36,
- name:"خاتم أنيق",
- category:"إكسسوارات",
- price:99,
- old:139,
- image:"https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=900&q=85"
+id:36,
+name:"خاتم أنيق",
+category:"إكسسوارات",
+price:99,
+old:139,
+image:"https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:37,
- name:"حزام جلدي أسود",
- category:"إكسسوارات",
- price:129,
- old:179,
- image:"https://images.unsplash.com/photo-1624222247344-550fb60583dc?auto=format&fit=crop&w=900&q=85"
+id:37,
+name:"حزام جلدي أسود",
+category:"إكسسوارات",
+price:129,
+old:179,
+image:"https://images.unsplash.com/photo-1624222247344-550fb60583dc?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:38,
- name:"وشاح حريري",
- category:"إكسسوارات",
- price:159,
- old:219,
- image:"https://images.unsplash.com/photo-1601924994987-69e26d50dc26?auto=format&fit=crop&w=900&q=85"
+id:38,
+name:"وشاح حريري",
+category:"إكسسوارات",
+price:159,
+old:219,
+image:"https://images.unsplash.com/photo-1601924994987-69e26d50dc26?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:39,
- name:"نظارة بنية",
- category:"إكسسوارات",
- price:189,
- old:249,
- image:"https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=900&q=85"
+id:39,
+name:"نظارة بنية",
+category:"إكسسوارات",
+price:189,
+old:249,
+image:"https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:40,
- name:"حقيبة مجوهرات",
- category:"إكسسوارات",
- price:109,
- old:149,
- image:"https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=900&q=85"
+id:40,
+name:"حقيبة مجوهرات",
+category:"إكسسوارات",
+price:109,
+old:149,
+image:"https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=900&q=90"
 },
 
-/* CLOTHES */
-
 {
- id:41,
- name:"جاكيت نسائي بيج",
- category:"ملابس",
- price:449,
- old:599,
- image:"https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=900&q=85"
+id:41,
+name:"جاكيت نسائي بيج",
+category:"ملابس",
+price:449,
+old:599,
+image:"https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:42,
- name:"جاكيت جلد أسود",
- category:"ملابس",
- price:499,
- old:649,
- image:"https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=85"
+id:42,
+name:"جاكيت جلد أسود",
+category:"ملابس",
+price:499,
+old:649,
+image:"https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:43,
- name:"بلوزة بيضاء",
- category:"ملابس",
- price:229,
- old:299,
- image:"https://images.unsplash.com/photo-1607345366928-199ea26cfe3e?auto=format&fit=crop&w=900&q=85"
+id:43,
+name:"بلوزة بيضاء",
+category:"ملابس",
+price:229,
+old:299,
+image:"https://images.unsplash.com/photo-1607345366928-199ea26cfe3e?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:44,
- name:"بلوزة ساتان",
- category:"ملابس",
- price:259,
- old:349,
- image:"https://images.unsplash.com/photo-1564257577054-1e5c8d3e0f3a?auto=format&fit=crop&w=900&q=85"
+id:44,
+name:"بلوزة ساتان",
+category:"ملابس",
+price:259,
+old:349,
+image:"https://images.unsplash.com/photo-1564257577054-1e5c8d3e0f3a?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:45,
- name:"تنورة سوداء",
- category:"ملابس",
- price:279,
- old:369,
- image:"https://images.unsplash.com/photo-1583496661160-fb5886a13d77?auto=format&fit=crop&w=900&q=85"
+id:45,
+name:"تنورة سوداء",
+category:"ملابس",
+price:279,
+old:369,
+image:"https://images.unsplash.com/photo-1583496661160-fb5886a13d77?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:46,
- name:"تنورة بيج",
- category:"ملابس",
- price:289,
- old:379,
- image:"https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=900&q=85"
+id:46,
+name:"تنورة بيج",
+category:"ملابس",
+price:289,
+old:379,
+image:"https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:47,
- name:"بنطلون أنيق",
- category:"ملابس",
- price:299,
- old:399,
- image:"https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=900&q=85"
+id:47,
+name:"بنطلون أنيق",
+category:"ملابس",
+price:299,
+old:399,
+image:"https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:48,
- name:"بنطلون واسع",
- category:"ملابس",
- price:319,
- old:419,
- image:"https://images.unsplash.com/photo-1506629905607-d9d7c0e9a3a1?auto=format&fit=crop&w=900&q=85"
+id:48,
+name:"بنطلون واسع",
+category:"ملابس",
+price:319,
+old:419,
+image:"https://images.unsplash.com/photo-1506629905607-d9d7c0e9a3a1?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:49,
- name:"كارديغان ناعم",
- category:"ملابس",
- price:269,
- old:349,
- image:"https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=900&q=85"
+id:49,
+name:"كارديغان ناعم",
+category:"ملابس",
+price:269,
+old:349,
+image:"https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:50,
- name:"سترة نسائية",
- category:"ملابس",
- price:339,
- old:449,
- image:"https://images.unsplash.com/photo-1591369822096-ffd140ec948f?auto=format&fit=crop&w=900&q=85"
+id:50,
+name:"سترة نسائية",
+category:"ملابس",
+price:339,
+old:449,
+image:"https://images.unsplash.com/photo-1591369822096-ffd140ec948f?auto=format&fit=crop&w=900&q=90"
 },
-
-/* EXTRA */
 
 {
- id:51,
- name:"فستان أسود قصير",
- category:"فساتين",
- price:399,
- old:529,
- image:"https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=900&q=85"
+id:51,
+name:"فستان أسود قصير",
+category:"فساتين",
+price:399,
+old:529,
+image:"https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:52,
- name:"فستان وردي طويل",
- category:"فساتين",
- price:559,
- old:699,
- image:"https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=900&q=85"
+id:52,
+name:"فستان وردي طويل",
+category:"فساتين",
+price:559,
+old:699,
+image:"https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:53,
- name:"حقيبة سهرة سوداء",
- category:"حقائب",
- price:229,
- old:299,
- image:"https://images.unsplash.com/photo-1575032617751-6ddec208988c?auto=format&fit=crop&w=900&q=85"
+id:53,
+name:"حقيبة سهرة سوداء",
+category:"حقائب",
+price:229,
+old:299,
+image:"https://images.unsplash.com/photo-1575032617751-6ddec208988c?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:54,
- name:"حقيبة كتف بيج",
- category:"حقائب",
- price:329,
- old:429,
- image:"https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?auto=format&fit=crop&w=900&q=85"
+id:54,
+name:"حقيبة كتف بيج",
+category:"حقائب",
+price:329,
+old:429,
+image:"https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:55,
- name:"حذاء كعب وردي",
- category:"أحذية",
- price:379,
- old:479,
- image:"https://images.unsplash.com/photo-1515347619252-60a4bf4fff4f?auto=format&fit=crop&w=900&q=85"
+id:55,
+name:"حذاء كعب وردي",
+category:"أحذية",
+price:379,
+old:479,
+image:"https://images.unsplash.com/photo-1515347619252-60a4bf4fff4f?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:56,
- name:"صندل أنيق",
- category:"أحذية",
- price:249,
- old:329,
- image:"https://images.unsplash.com/photo-1562273138-f46be4ebdf33?auto=format&fit=crop&w=900&q=85"
+id:56,
+name:"صندل أنيق",
+category:"أحذية",
+price:249,
+old:329,
+image:"https://images.unsplash.com/photo-1562273138-f46be4ebdf33?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:57,
- name:"سوار فضي",
- category:"إكسسوارات",
- price:129,
- old:179,
- image:"https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=900&q=85"
+id:57,
+name:"سوار فضي",
+category:"إكسسوارات",
+price:129,
+old:179,
+image:"https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:58,
- name:"أقراط ذهبية",
- category:"إكسسوارات",
- price:139,
- old:189,
- image:"https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=900&q=85"
+id:58,
+name:"أقراط ذهبية",
+category:"إكسسوارات",
+price:139,
+old:189,
+image:"https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:59,
- name:"قميص نسائي",
- category:"ملابس",
- price:239,
- old:319,
- image:"https://images.unsplash.com/photo-1607345366928-199ea26cfe3e?auto=format&fit=crop&w=900&q=85"
+id:59,
+name:"قميص نسائي",
+category:"ملابس",
+price:239,
+old:319,
+image:"https://images.unsplash.com/photo-1607345366928-199ea26cfe3e?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:60,
- name:"بلوزة وردية",
- category:"ملابس",
- price:219,
- old:299,
- image:"https://images.unsplash.com/photo-1564257577054-1e5c8d3e0f3a?auto=format&fit=crop&w=900&q=85"
+id:60,
+name:"بلوزة وردية",
+category:"ملابس",
+price:219,
+old:299,
+image:"https://images.unsplash.com/photo-1564257577054-1e5c8d3e0f3a?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:61,
- name:"فستان بيج فاخر",
- category:"فساتين",
- price:579,
- old:749,
- image:"https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=85"
+id:61,
+name:"فستان بيج فاخر",
+category:"فساتين",
+price:579,
+old:749,
+image:"https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:62,
- name:"فستان سهرة وردي",
- category:"فساتين",
- price:699,
- old:899,
- image:"https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=900&q=85"
+id:62,
+name:"فستان سهرة وردي",
+category:"فساتين",
+price:699,
+old:899,
+image:"https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:63,
- name:"حقيبة جلد فاخرة",
- category:"حقائب",
- price:429,
- old:559,
- image:"https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=900&q=85"
+id:63,
+name:"حقيبة جلد فاخرة",
+category:"حقائب",
+price:429,
+old:559,
+image:"https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:64,
- name:"حقيبة وردية صغيرة",
- category:"حقائب",
- price:259,
- old:339,
- image:"https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=900&q=85"
+id:64,
+name:"حقيبة وردية صغيرة",
+category:"حقائب",
+price:259,
+old:339,
+image:"https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:65,
- name:"حذاء رياضي أبيض",
- category:"أحذية",
- price:349,
- old:449,
- image:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85"
+id:65,
+name:"حذاء رياضي أبيض",
+category:"أحذية",
+price:349,
+old:449,
+image:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:66,
- name:"حذاء لوفر أنيق",
- category:"أحذية",
- price:359,
- old:469,
- image:"https://images.unsplash.com/photo-1535043934128-cf487c033a83?auto=format&fit=crop&w=900&q=85"
+id:66,
+name:"حذاء لوفر أنيق",
+category:"أحذية",
+price:359,
+old:469,
+image:"https://images.unsplash.com/photo-1535043934128-cf487c033a83?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:67,
- name:"نظارة عصرية",
- category:"إكسسوارات",
- price:169,
- old:229,
- image:"https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=900&q=85"
+id:67,
+name:"نظارة عصرية",
+category:"إكسسوارات",
+price:169,
+old:229,
+image:"https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:68,
- name:"قلادة ناعمة",
- category:"إكسسوارات",
- price:129,
- old:179,
- image:"https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=900&q=85"
+id:68,
+name:"قلادة ناعمة",
+category:"إكسسوارات",
+price:129,
+old:179,
+image:"https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:69,
- name:"جاكيت كريمي",
- category:"ملابس",
- price:429,
- old:559,
- image:"https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=900&q=85"
+id:69,
+name:"جاكيت كريمي",
+category:"ملابس",
+price:429,
+old:559,
+image:"https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:70,
- name:"كارديغان بيج",
- category:"ملابس",
- price:279,
- old:369,
- image:"https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=900&q=85"
+id:70,
+name:"كارديغان بيج",
+category:"ملابس",
+price:279,
+old:369,
+image:"https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:71,
- name:"فستان صيفي أنيق",
- category:"فساتين",
- price:449,
- old:579,
- image:"https://images.unsplash.com/photo-1539008835657-9e8e9680c956?auto=format&fit=crop&w=900&q=85"
+id:71,
+name:"فستان صيفي أنيق",
+category:"فساتين",
+price:449,
+old:579,
+image:"https://images.unsplash.com/photo-1539008835657-9e8e9680c956?auto=format&fit=crop&w=900&q=90"
 },
 
 {
- id:72,
- name:"فستان أخضر فاخر",
- category:"فساتين",
- price:649,
- old:829,
- image:"https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=900&q=85"
+id:72,
+name:"فستان أخضر فاخر",
+category:"فساتين",
+price:649,
+old:829,
+image:"https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=900&q=90"
 }
 
 ];
 
 
+/* =====================================
+   المتغيرات
+===================================== */
+
 let currentCategory = "الكل";
-let cart = JSON.parse(localStorage.getItem("lavinaCart")) || [];
+
+let cart =
+  JSON.parse(localStorage.getItem("lavinaCart")) || [];
 
 
-/* RENDER PRODUCTS */
+/* =====================================
+   عرض المنتجات
+===================================== */
 
 function renderProducts(){
 
-  const grid = document.getElementById("productsGrid");
-  const search = document.getElementById("search").value.toLowerCase().trim();
+  const grid =
+    document.getElementById("productsGrid");
 
-  let filtered = products.filter(product => {
+  const searchInput =
+    document.getElementById("search");
 
-    const categoryMatch =
-      currentCategory === "الكل" ||
-      product.category === currentCategory;
+  const search =
+    searchInput.value.toLowerCase().trim();
 
-    const searchMatch =
-      product.name.toLowerCase().includes(search) ||
-      product.category.toLowerCase().includes(search);
 
-    return categoryMatch && searchMatch;
-  });
+  const filtered =
+    products.filter(product => {
+
+      const categoryMatch =
+        currentCategory === "الكل" ||
+        product.category === currentCategory;
+
+      const searchMatch =
+        product.name.toLowerCase().includes(search) ||
+        product.category.toLowerCase().includes(search);
+
+      return categoryMatch && searchMatch;
+
+    });
 
 
   if(filtered.length === 0){
@@ -1659,6 +1940,7 @@ function renderProducts(){
         color:#777;
       ">
         <h3>لم نجد أي منتج</h3>
+
         <p style="margin-top:10px">
           جربي كلمة بحث أخرى
         </p>
@@ -1669,113 +1951,171 @@ function renderProducts(){
   }
 
 
-  grid.innerHTML = filtered.map(product => `
+  grid.innerHTML =
+    filtered.map(product => `
 
-    <article class="card">
+      <article class="card">
 
-      <div class="image-wrap">
+        <div class="image-wrap">
 
-        <img
-          src="${product.image}"
-          alt="${product.name}"
-          loading="lazy"
-          onerror="this.src='https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=80'"
-        >
+          <img
+            src="${product.image}"
+            alt="${product.name}"
+            loading="lazy"
+            onerror="imageError(this)"
+          >
 
-        ${
-          product.id <= 10
-          ? `<span class="badge">جديد</span>`
-          : ""
-        }
+          ${
+            product.id <= 10
+            ?
+            `<span class="badge">جديد</span>`
+            :
+            ""
+          }
 
-      </div>
-
-      <div class="card-body">
-
-        <div class="card-category">
-          ${product.category}
         </div>
 
-        <h3>${product.name}</h3>
 
-        <div class="rating">
-          ★★★★★
+        <div class="card-body">
+
+          <div class="card-category">
+            ${product.category}
+          </div>
+
+          <h3>
+            ${product.name}
+          </h3>
+
+          <div class="rating">
+            ★★★★★
+          </div>
+
+          <div class="price">
+
+            <strong>
+              ${product.price} DH
+            </strong>
+
+            <span class="old">
+              ${product.old} DH
+            </span>
+
+          </div>
+
+
+          <button
+            class="add"
+            onclick="addToCart(${product.id})"
+          >
+            أضيفي إلى السلة
+          </button>
+
+
+          <button
+            class="details-btn"
+            onclick="openProduct(${product.id})"
+          >
+            مشاهدة التفاصيل
+          </button>
+
         </div>
 
-        <div class="price">
-          <strong>${product.price} DH</strong>
-          <span class="old">${product.old} DH</span>
-        </div>
+      </article>
 
-        <button
-          class="add"
-          onclick="addToCart(${product.id})"
-        >
-          أضيفي إلى السلة
-        </button>
+    `).join("");
 
-        <button
-          onclick="openProduct(${product.id})"
-          style="
-            width:100%;
-            border:0;
-            background:none;
-            margin-top:10px;
-            color:#777;
-            font-size:12px;
-          "
-        >
-          مشاهدة التفاصيل
-        </button>
-
-      </div>
-
-    </article>
-
-  `).join("");
 }
 
 
-/* CATEGORY */
+/* =====================================
+   صورة احتياطية
+===================================== */
 
-function filterCategory(category, button){
+function imageError(img){
+
+  if(img.dataset.failed){
+    return;
+  }
+
+  img.dataset.failed = "true";
+
+  img.src =
+    "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=80";
+}
+
+
+/* =====================================
+   التصنيفات
+===================================== */
+
+function filterCategory(category,button){
 
   currentCategory = category;
 
+
   document
     .querySelectorAll(".cat-btn")
-    .forEach(btn => btn.classList.remove("active"));
+    .forEach(btn => {
+
+      btn.classList.remove("active");
+
+    });
+
 
   button.classList.add("active");
 
+
   renderProducts();
+
 }
 
 
-/* ADD CART */
+/* =====================================
+   إضافة للسلة
+===================================== */
 
 function addToCart(id){
 
-  const product = products.find(p => p.id === id);
+  const product =
+    products.find(p => p.id === id);
 
-  const existing = cart.find(item => item.id === id);
+  if(!product){
+    return;
+  }
+
+
+  const existing =
+    cart.find(item => item.id === id);
+
 
   if(existing){
+
     existing.qty++;
+
   }else{
+
     cart.push({
-      id:product.id,
+      id:id,
       qty:1
     });
+
   }
+
 
   saveCart();
 
-  showToast("تمت إضافة المنتج إلى السلة ✓");
+  showToast(
+    "تمت إضافة " +
+    product.name +
+    " إلى السلة ✓"
+  );
+
 }
 
 
-/* SAVE */
+/* =====================================
+   حفظ السلة
+===================================== */
 
 function saveCart(){
 
@@ -1787,156 +2127,251 @@ function saveCart(){
   renderCart();
 
   updateCartCount();
+
 }
 
 
-/* COUNT */
+/* =====================================
+   عدد المنتجات
+===================================== */
 
 function updateCartCount(){
 
-  const count = cart.reduce(
-    (total,item) => total + item.qty,
-    0
-  );
+  const count =
+    cart.reduce(
+      (total,item) =>
+        total + item.qty,
+      0
+    );
 
-  document.getElementById("cartCount").textContent = count;
+
+  document.getElementById(
+    "cartCount"
+  ).textContent = count;
+
 }
 
 
-/* CART */
+/* =====================================
+   عرض السلة
+===================================== */
 
 function renderCart(){
 
   const container =
     document.getElementById("cartItems");
 
+
   if(cart.length === 0){
 
     container.innerHTML = `
+
       <div class="empty">
-        <div style="font-size:45px;margin-bottom:15px">
+
+        <div style="
+          font-size:45px;
+          margin-bottom:15px
+        ">
           🛍
         </div>
 
-        <h3>السلة فارغة</h3>
+        <h3>
+          السلة فارغة
+        </h3>
 
         <p style="margin-top:8px">
           أضيفي منتجاتك المفضلة هنا
         </p>
+
       </div>
+
     `;
 
-    document.getElementById("cartTotal").textContent =
-      "0 DH";
 
+    document.getElementById(
+      "cartTotal"
+    ).textContent = "0 DH";
+
+
+    return;
+
+  }
+
+
+  container.innerHTML =
+    cart.map(item => {
+
+      const product =
+        products.find(
+          p => p.id === item.id
+        );
+
+
+      if(!product){
+        return "";
+      }
+
+
+      return `
+
+        <div class="cart-item">
+
+          <img
+            src="${product.image}"
+            alt="${product.name}"
+            onerror="imageError(this)"
+          >
+
+
+          <div class="cart-info">
+
+            <h4>
+              ${product.name}
+            </h4>
+
+            <div class="cart-price">
+              ${product.price} DH
+            </div>
+
+
+            <div class="quantity">
+
+              <button
+                onclick="changeQty(${product.id},1)"
+              >
+                +
+              </button>
+
+              <span>
+                ${item.qty}
+              </span>
+
+              <button
+                onclick="changeQty(${product.id},-1)"
+              >
+                −
+              </button>
+
+            </div>
+
+
+            <button
+              class="remove"
+              onclick="removeFromCart(${product.id})"
+            >
+              حذف
+            </button>
+
+          </div>
+
+        </div>
+
+      `;
+
+    }).join("");
+
+
+  const total =
+    getCartTotal();
+
+
+  document.getElementById(
+    "cartTotal"
+  ).textContent =
+    total + " DH";
+
+}
+
+
+/* =====================================
+   حساب المجموع
+===================================== */
+
+function getCartTotal(){
+
+  return cart.reduce(
+    (sum,item) => {
+
+      const product =
+        products.find(
+          p => p.id === item.id
+        );
+
+      if(!product){
+        return sum;
+      }
+
+      return sum +
+        product.price *
+        item.qty;
+
+    },
+    0
+  );
+
+}
+
+
+/* =====================================
+   تغيير الكمية
+===================================== */
+
+function changeQty(id,amount){
+
+  const item =
+    cart.find(
+      item => item.id === id
+    );
+
+
+  if(!item){
     return;
   }
 
 
-  container.innerHTML = cart.map(item => {
-
-    const product =
-      products.find(p => p.id === item.id);
-
-    return `
-
-      <div class="cart-item">
-
-        <img
-          src="${product.image}"
-          alt="${product.name}"
-        >
-
-        <div class="cart-info">
-
-          <h4>${product.name}</h4>
-
-          <div class="cart-price">
-            ${product.price} DH
-          </div>
-
-          <div class="quantity">
-
-            <button
-              onclick="changeQty(${product.id},1)"
-            >
-              +
-            </button>
-
-            <span>${item.qty}</span>
-
-            <button
-              onclick="changeQty(${product.id},-1)"
-            >
-              −
-            </button>
-
-          </div>
-
-          <button
-            class="remove"
-            onclick="removeFromCart(${product.id})"
-          >
-            حذف
-          </button>
-
-        </div>
-
-      </div>
-
-    `;
-
-  }).join("");
-
-
-  const total = cart.reduce((sum,item) => {
-
-    const product =
-      products.find(p => p.id === item.id);
-
-    return sum + product.price * item.qty;
-
-  },0);
-
-
-  document.getElementById("cartTotal").textContent =
-    total + " DH";
-}
-
-
-/* CHANGE QTY */
-
-function changeQty(id, amount){
-
-  const item =
-    cart.find(item => item.id === id);
-
-  if(!item) return;
-
   item.qty += amount;
 
+
   if(item.qty <= 0){
-    cart = cart.filter(item => item.id !== id);
+
+    cart =
+      cart.filter(
+        item => item.id !== id
+      );
+
   }
 
+
   saveCart();
+
 }
 
 
-/* REMOVE */
+/* =====================================
+   حذف المنتج
+===================================== */
 
 function removeFromCart(id){
 
   cart =
-    cart.filter(item => item.id !== id);
+    cart.filter(
+      item => item.id !== id
+    );
+
 
   saveCart();
 
-  showToast("تم حذف المنتج");
+
+  showToast(
+    "تم حذف المنتج من السلة"
+  );
+
 }
 
 
-/* OPEN CART */
+/* =====================================
+   فتح السلة
+===================================== */
 
 function openCart(){
 
@@ -1944,15 +2379,20 @@ function openCart(){
     .getElementById("cart")
     .classList.add("open");
 
+
   document
     .getElementById("overlay")
     .classList.add("show");
 
+
   renderCart();
+
 }
 
 
-/* CLOSE CART */
+/* =====================================
+   إغلاق السلة
+===================================== */
 
 function closeCart(){
 
@@ -1960,37 +2400,72 @@ function closeCart(){
     .getElementById("cart")
     .classList.remove("open");
 
+
   document
     .getElementById("overlay")
     .classList.remove("show");
+
 }
 
 
-/* PRODUCT MODAL */
+/* =====================================
+   تفاصيل المنتج
+===================================== */
 
 function openProduct(id){
 
   const product =
-    products.find(p => p.id === id);
+    products.find(
+      p => p.id === id
+    );
 
-  if(!product) return;
 
-  document.getElementById("modalImage").src =
-    product.image;
+  if(!product){
+    return;
+  }
 
-  document.getElementById("modalCategory").textContent =
+
+  document.getElementById(
+    "modalImage"
+  ).src = product.image;
+
+
+  document.getElementById(
+    "modalImage"
+  ).onerror = function(){
+
+    imageError(this);
+
+  };
+
+
+  document.getElementById(
+    "modalCategory"
+  ).textContent =
     product.category;
 
-  document.getElementById("modalTitle").textContent =
+
+  document.getElementById(
+    "modalTitle"
+  ).textContent =
     product.name;
 
-  document.getElementById("modalPrice").textContent =
+
+  document.getElementById(
+    "modalPrice"
+  ).textContent =
     product.price + " DH";
 
-  document.getElementById("modalDescription").textContent =
+
+  document.getElementById(
+    "modalDescription"
+  ).textContent =
     "قطعة أنيقة وعصرية مختارة بعناية من مجموعة LAVINA. تصميم مميز وجودة عالية لتناسب إطلالتك اليومية والمناسبات الخاصة.";
 
-  document.getElementById("modalAdd").onclick = function(){
+
+  document.getElementById(
+    "modalAdd"
+  ).onclick = function(){
 
     addToCart(product.id);
 
@@ -1998,70 +2473,175 @@ function openProduct(id){
 
   };
 
+
   document
     .getElementById("productModal")
     .classList.add("show");
+
 }
 
+
+/* =====================================
+   إغلاق التفاصيل
+===================================== */
 
 function closeProduct(){
 
   document
     .getElementById("productModal")
     .classList.remove("show");
+
 }
 
 
-/* CHECKOUT */
+/* =====================================
+   واتساب - إتمام الطلب
+===================================== */
 
 function checkout(){
 
   if(cart.length === 0){
 
-    showToast("السلة فارغة");
+    showToast(
+      "السلة فارغة"
+    );
 
     return;
+
   }
 
-  const total = cart.reduce((sum,item) => {
+
+  let message =
+    "السلام عليكم، أريد تأكيد هذا الطلب من متجر LAVINA 🌸%0A%0A";
+
+
+  message +=
+    "🛍️ *تفاصيل الطلب:*%0A";
+
+
+  message +=
+    "━━━━━━━━━━━━━━%0A";
+
+
+  cart.forEach((item,index) => {
 
     const product =
-      products.find(p => p.id === item.id);
-
-    return sum + product.price * item.qty;
-
-  },0);
+      products.find(
+        p => p.id === item.id
+      );
 
 
-  alert(
-    "شكراً لك ❤️\n\n" +
-    "قيمة الطلب: " + total + " DH\n\n" +
-    "هذه نسخة تجريبية من المتجر.\n" +
-    "يمكن ربط زر الطلب لاحقاً بواتساب أو نظام دفع."
+    if(!product){
+      return;
+    }
+
+
+    const subtotal =
+      product.price *
+      item.qty;
+
+
+    message +=
+      (index + 1) +
+      ". " +
+      product.name +
+      "%0A";
+
+
+    message +=
+      "الكمية: " +
+      item.qty +
+      "%0A";
+
+
+    message +=
+      "السعر: " +
+      product.price +
+      " DH%0A";
+
+
+    message +=
+      "المجموع: " +
+      subtotal +
+      " DH%0A";
+
+
+    message +=
+      "━━━━━━━━━━━━━━%0A";
+
+  });
+
+
+  const total =
+    getCartTotal();
+
+
+  message +=
+    "💰 *إجمالي الطلب: " +
+    total +
+    " DH*%0A%0A";
+
+
+  message +=
+    "📍 المرجو إرسال الاسم والعنوان ورقم الهاتف لتأكيد التوصيل.";
+
+
+  const whatsappURL =
+    "https://wa.me/" +
+    WHATSAPP_NUMBER +
+    "?text=" +
+    message;
+
+
+  window.open(
+    whatsappURL,
+    "_blank"
   );
+
 }
 
 
-/* TOAST */
+/* =====================================
+   Toast
+===================================== */
 
 function showToast(message){
 
   const toast =
-    document.getElementById("toast");
+    document.getElementById(
+      "toast"
+    );
 
-  toast.textContent = message;
 
-  toast.classList.add("show");
+  toast.textContent =
+    message;
 
-  setTimeout(() => {
 
-    toast.classList.remove("show");
+  toast.classList.add(
+    "show"
+  );
 
-  },2200);
+
+  clearTimeout(
+    window.toastTimer
+  );
+
+
+  window.toastTimer =
+    setTimeout(() => {
+
+      toast.classList.remove(
+        "show"
+      );
+
+    },2200);
+
 }
 
 
-/* SCROLL */
+/* =====================================
+   Scroll
+===================================== */
 
 function scrollToProducts(){
 
@@ -2070,52 +2650,77 @@ function scrollToProducts(){
     .scrollIntoView({
       behavior:"smooth"
     });
+
 }
 
 
-/* NEWSLETTER */
+/* =====================================
+   الاشتراك
+===================================== */
 
 function subscribe(event){
 
   event.preventDefault();
 
-  showToast("تم الاشتراك بنجاح ❤️");
+
+  showToast(
+    "تم الاشتراك بنجاح ❤️"
+  );
+
 
   event.target.reset();
+
 }
 
 
-/* MODAL CLICK OUTSIDE */
+/* =====================================
+   إغلاق النافذة عند الضغط خارجها
+===================================== */
 
 document
   .getElementById("productModal")
-  .addEventListener("click",function(e){
+  .addEventListener(
+    "click",
+    function(e){
 
-    if(e.target === this){
+      if(e.target === this){
+
+        closeProduct();
+
+      }
+
+    }
+  );
+
+
+/* =====================================
+   زر ESC
+===================================== */
+
+document.addEventListener(
+  "keydown",
+  function(e){
+
+    if(e.key === "Escape"){
+
       closeProduct();
+
+      closeCart();
+
     }
 
-  });
-
-
-/* ESC */
-
-document.addEventListener("keydown",function(e){
-
-  if(e.key === "Escape"){
-
-    closeProduct();
-    closeCart();
-
   }
+);
 
-});
 
-
-/* INITIALIZE */
+/* =====================================
+   تشغيل المتجر
+===================================== */
 
 renderProducts();
+
 renderCart();
+
 updateCartCount();
 
 </script>
