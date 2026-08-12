@@ -1,98 +1,825 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Queen Beauty | جمالك يستحق الأفضل</title>
-<meta name="description" content="متجر Queen Beauty للمكياج والعطور ومنتجات العناية بالوجه والشعر. الطلب مباشرة عبر واتساب.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>QUEEN BEAUTY | متجر الجمال</title>
+
 <style>
-:root{--pink:#d83f67;--dark:#35141f;--soft:#fff1f5;--gold:#c99a28}
-*{box-sizing:border-box}body{margin:0;font-family:Arial,Tahoma,sans-serif;color:var(--dark);background:#fff}
-a{text-decoration:none;color:inherit}.top{background:#ffe1ea;padding:10px;text-align:center;font-size:14px}
-nav{height:78px;display:flex;align-items:center;justify-content:space-between;padding:0 7%;border-bottom:1px solid #f5d9e1;background:#fff;position:sticky;top:0;z-index:5}
-.logo{font-family:Georgia,serif;font-size:29px;font-weight:bold;color:var(--pink)}.logo span{display:block;font-family:Arial;font-size:12px;text-align:center;color:#555}
-.cart{font-size:25px;cursor:pointer}.hero{min-height:470px;background:linear-gradient(90deg,#fff2f5,#fff);display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:45px 7%;gap:30px}
-.hero h1{font-size:48px;margin:0 0 18px;color:#bf3156}.hero p{font-size:20px;line-height:1.8}.btn{display:inline-block;background:var(--pink);color:#fff;padding:13px 27px;border-radius:30px;border:0;font-size:17px;cursor:pointer}
-.hero img{width:100%;max-height:390px;object-fit:cover;border-radius:25px;box-shadow:0 12px 35px #d83f6722}
-section{padding:48px 7%}.title{text-align:center;font-size:30px;margin:0 0 28px}.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.cat{background:var(--soft);border:1px solid #f4ccd7;border-radius:20px;padding:25px;text-align:center;font-size:20px}.cat i{font-size:48px;display:block;margin-bottom:8px}
-.products{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}.card{border:1px solid #eee;border-radius:18px;overflow:hidden;background:#fff;box-shadow:0 4px 18px #00000009}.card img{width:100%;height:210px;object-fit:cover}.card-body{padding:13px;text-align:center}.card h3{font-size:17px;margin:5px 0 9px}.price{font-weight:bold;color:#9e1f40;font-size:20px;margin:8px}.order{width:100%;padding:10px;border:0;border-radius:12px;background:var(--pink);color:white;cursor:pointer}
-.features{background:var(--soft);display:grid;grid-template-columns:repeat(4,1fr);text-align:center;gap:20px}.feature{font-size:18px}.feature b{display:block;font-size:38px;margin-bottom:8px}
-footer{background:#ffdce7;padding:35px 7%;text-align:center}.wa{display:inline-block;background:#16b95a;color:white;padding:15px 35px;border-radius:30px;font-size:22px;font-weight:bold}
-.drawer{position:fixed;inset:0 0 0 auto;width:min(420px,92%);background:#fff;z-index:20;box-shadow:-8px 0 30px #0002;transform:translateX(110%);transition:.3s;padding:25px;overflow:auto}.drawer.open{transform:translateX(0)}
-.item{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #eee;padding:12px 0}.close{float:left;border:0;background:none;font-size:28px}.total{font-size:22px;font-weight:bold;margin:20px 0}.send{display:block;text-align:center;background:#16b95a;color:#fff;padding:14px;border-radius:12px;font-weight:bold}
-@media(max-width:850px){.hero{grid-template-columns:1fr;text-align:center}.hero h1{font-size:36px}.cats{grid-template-columns:repeat(2,1fr)}.products{grid-template-columns:repeat(2,1fr)}.features{grid-template-columns:repeat(2,1fr)}nav{padding:0 4%}}
-@media(max-width:480px){.products{grid-template-columns:1fr}.features{grid-template-columns:1fr}.hero{padding:30px 5%}section{padding:35px 5%}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+font-family:Arial,Tahoma,sans-serif;
+background:#fff7fb;
+color:#351b2c;
+}
+header{
+background:linear-gradient(135deg,#ff4f9a,#8e3dff);
+color:white;
+padding:25px 15px;
+text-align:center;
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 4px 20px #0002;
+}
+.logo{font-size:32px;font-weight:900}
+header p{margin-top:7px;font-size:14px}
+
+.container{max-width:1200px;margin:auto;padding:20px 14px}
+
+.hero{
+background:linear-gradient(135deg,#ffe1ef,#f0dcff);
+border-radius:25px;
+padding:35px 20px;
+text-align:center;
+margin-bottom:20px;
+}
+.hero h1{font-size:32px;color:#9b2160;margin-bottom:12px}
+.hero p{line-height:1.8}
+.hero button{
+margin-top:18px;
+border:0;
+background:#d92778;
+color:white;
+padding:13px 25px;
+border-radius:30px;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.search{
+width:100%;
+padding:15px;
+border:2px solid #f2b4d2;
+border-radius:15px;
+font-size:16px;
+outline:none;
+margin-bottom:15px;
+}
+
+.categories{
+display:flex;
+gap:8px;
+overflow-x:auto;
+padding-bottom:12px;
+}
+.categories button{
+white-space:nowrap;
+border:0;
+padding:11px 18px;
+border-radius:25px;
+background:#f5d6e6;
+color:#6c2146;
+font-weight:bold;
+cursor:pointer;
+}
+.categories button.active,
+.categories button:hover{
+background:#d92778;
+color:white;
+}
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:18px;
+}
+
+.card{
+background:white;
+border-radius:22px;
+overflow:hidden;
+box-shadow:0 5px 20px #7d23521a;
+transition:.25s;
+border:1px solid #f6d9e8;
+}
+.card:hover{transform:translateY(-4px)}
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+.card-body{padding:15px}
+.badge{
+display:inline-block;
+background:#ffe1ef;
+color:#b52065;
+padding:5px 9px;
+border-radius:15px;
+font-size:12px;
+margin-bottom:8px;
+}
+.card h3{font-size:18px;margin-bottom:8px}
+.card p{
+font-size:13px;
+line-height:1.6;
+color:#765568;
+min-height:42px;
+}
+.price{
+font-size:21px;
+font-weight:bold;
+color:#d92778;
+margin:12px 0;
+}
+.actions{display:flex;gap:7px}
+.actions button{
+flex:1;
+border:0;
+padding:11px 5px;
+border-radius:12px;
+font-weight:bold;
+cursor:pointer;
+}
+.add{background:#351b2c;color:white}
+.buy{background:#25d366;color:white}
+
+.cart-btn{
+position:fixed;
+bottom:20px;
+left:20px;
+z-index:2000;
+border:0;
+background:#d92778;
+color:white;
+width:62px;
+height:62px;
+border-radius:50%;
+font-size:25px;
+box-shadow:0 5px 20px #0003;
+cursor:pointer;
+}
+.cart-count{
+position:absolute;
+top:-5px;
+right:-5px;
+background:#25d366;
+width:25px;
+height:25px;
+border-radius:50%;
+font-size:13px;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.overlay{
+display:none;
+position:fixed;
+inset:0;
+background:#0008;
+z-index:3000;
+}
+.cart{
+position:absolute;
+right:0;
+top:0;
+height:100%;
+width:min(430px,100%);
+background:white;
+padding:20px;
+overflow-y:auto;
+}
+.cart-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:20px;
+}
+.close{
+border:0;
+background:#eee;
+border-radius:50%;
+width:40px;
+height:40px;
+font-size:20px;
+cursor:pointer;
+}
+.cart-item{
+display:flex;
+gap:10px;
+padding:12px 0;
+border-bottom:1px solid #eee;
+}
+.cart-item img{
+width:70px;
+height:70px;
+border-radius:12px;
+object-fit:cover;
+}
+.cart-info{flex:1}
+.cart-info h4{font-size:14px;margin-bottom:6px}
+.cart-info b{color:#d92778}
+.qty{
+display:flex;
+align-items:center;
+gap:8px;
+margin-top:7px;
+}
+.qty button{
+border:0;
+width:28px;
+height:28px;
+border-radius:8px;
+background:#f3d5e5;
+cursor:pointer;
+}
+.remove{
+border:0;
+background:none;
+color:#e22;
+cursor:pointer;
+font-size:18px;
+}
+.total{
+font-size:22px;
+font-weight:bold;
+margin:20px 0;
+color:#351b2c;
+}
+.order{
+width:100%;
+border:0;
+padding:15px;
+border-radius:15px;
+background:#25d366;
+color:white;
+font-size:17px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.empty{text-align:center;padding:50px 10px;color:#777}
+
+footer{
+margin-top:40px;
+background:#351b2c;
+color:white;
+text-align:center;
+padding:30px 15px;
+line-height:2;
+}
+
+@media(max-width:600px){
+.logo{font-size:27px}
+.hero h1{font-size:26px}
+.products{grid-template-columns:repeat(2,1fr);gap:10px}
+.card img{height:170px}
+.card-body{padding:10px}
+.card h3{font-size:15px}
+.card p{font-size:12px;min-height:55px}
+.price{font-size:18px}
+.actions button{font-size:12px;padding:10px 3px}
+}
 </style>
 </head>
-<body>
-<div class="top">🎁 الدفع عند الاستلام &nbsp; | &nbsp; 💎 منتجات أصلية &nbsp; | &nbsp; 🚚 توصيل سريع</div>
-<nav>
-<div class="cart" onclick="openCart()">🛍️ <span id="count">0</span></div>
-<div class="logo">♕ Queen Beauty<span>جمالك... ثقتك... تميزك</span></div>
-<div>☰</div>
-</nav>
 
-<header class="hero">
-<div>
-<h1>جمالك يستحق الأفضل ✨</h1>
-<p>تشكيلة راقية من المكياج والعطور ومنتجات العناية بالبشرة والشعر، مختارة لتمنحك إطلالة أنيقة وإحساساً بالثقة كل يوم.</p>
-<button class="btn" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">تسوقي الآن</button>
-</div>
-<img src="queen-beauty-preview.png" alt="Queen Beauty">
+<body>
+
+<header>
+<div class="logo">👑 QUEEN BEAUTY 👑</div>
+<p>جمالكِ يبدأ من هنا ✨</p>
 </header>
 
-<section>
-<h2 class="title">تسوقي حسب التصنيف</h2>
-<div class="cats">
-<div class="cat"><i>💄</i>المكياج</div><div class="cat"><i>🌸</i>العطور</div>
-<div class="cat"><i>🧴</i>منظفات الوجه</div><div class="cat"><i>✨</i>منظفات الشعر</div>
-</div>
+<div class="container">
+
+<section class="hero">
+<h1>اكتشفي جمالكِ مع QUEEN BEAUTY 💕</h1>
+<p>
+منتجات مختارة للعناية بالجمال، البشرة والشعر والمكياج والعطور.
+اختاري منتجاتكِ وأرسلي طلبكِ مباشرة عبر واتساب.
+</p>
+<button onclick="openCart()">🛍️ مشاهدة السلة</button>
 </section>
 
-<section id="products">
-<h2 class="title">منتجات مميزة 💕</h2>
-<div class="products">
-<div class="card"><img src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=700&q=80"><div class="card-body"><h3>عطر نسائي فاخر</h3><div class="price">350 DH</div><button class="order" onclick="add('عطر نسائي فاخر',350)">اطلبي الآن</button></div></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=700&q=80"><div class="card-body"><h3>أحمر شفاه أنيق</h3><div class="price">120 DH</div><button class="order" onclick="add('أحمر شفاه أنيق',120)">اطلبي الآن</button></div></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=700&q=80"><div class="card-body"><h3>غسول لطيف للوجه</h3><div class="price">150 DH</div><button class="order" onclick="add('غسول لطيف للوجه',150)">اطلبي الآن</button></div></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=700&q=80"><div class="card-body"><h3>غسول للبشرة</h3><div class="price">140 DH</div><button class="order" onclick="add('غسول للبشرة',140)">اطلبي الآن</button></div></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=700&q=80"><div class="card-body"><h3>شامبو للعناية بالشعر</h3><div class="price">85 DH</div><button class="order" onclick="add('شامبو للعناية بالشعر',85)">اطلبي الآن</button></div></div>
-</div>
-</section>
+<input
+id="search"
+class="search"
+type="text"
+placeholder="🔎 ابحثي عن منتج..."
+oninput="renderProducts()"
+>
 
-<section class="features">
-<div class="feature"><b>🛡️</b><strong>منتجات موثوقة</strong><br>جودة نهتم بها</div>
-<div class="feature"><b>🚚</b><strong>توصيل سريع</strong><br>حسب منطقتك</div>
-<div class="feature"><b>🎁</b><strong>الدفع عند الاستلام</strong><br>راحة وأمان</div>
-<div class="feature"><b>💗</b><strong>خدمة مميزة</strong><br>نحن هنا لخدمتك</div>
-</section>
+<div class="categories">
+<button class="active" onclick="filterCat('الكل',this)">✨ الكل</button>
+<button onclick="filterCat('مكياج',this)">💄 مكياج</button>
+<button onclick="filterCat('عطور',this)">🌸 عطور</button>
+<button onclick="filterCat('بشرة',this)">🧴 العناية بالبشرة</button>
+<button onclick="filterCat('شعر',this)">💆‍♀️ العناية بالشعر</button>
+</div>
+
+<div id="products" class="products"></div>
+
+</div>
 
 <footer>
-<h2>تواصلي معنا على الواتساب 💬</h2>
-<a class="wa" href="https://wa.me/212715136475" target="_blank">واتساب: 0715136475</a>
-<p>Queen Beauty — أنتِ دائماً الأجمل ♕</p>
+<h2>👑 QUEEN BEAUTY</h2>
+<p>جمالكِ... أناقتكِ... ثقتكِ ✨</p>
+<p>📱 الطلب عبر واتساب: 0715136475</p>
 </footer>
 
-<aside class="drawer" id="drawer">
-<button class="close" onclick="closeCart()">×</button><h2>🛍️ سلة المشتريات</h2>
-<div id="cartItems"></div><div class="total" id="total">المجموع: 0 DH</div>
-<a class="send" id="send" href="#" target="_blank">إرسال الطلب عبر واتساب</a>
-</aside>
+<button class="cart-btn" onclick="openCart()">
+🛒
+<span id="cartCount" class="cart-count">0</span>
+</button>
+
+<div id="overlay" class="overlay">
+<div class="cart">
+
+<div class="cart-header">
+<h2>🛒 سلة المشتريات</h2>
+<button class="close" onclick="closeCart()">×</button>
+</div>
+
+<div id="cartItems"></div>
+
+<div id="cartTotal" class="total">المجموع: 0 DH</div>
+
+<button class="order" onclick="sendWhatsApp()">
+💬 إرسال الطلب عبر واتساب
+</button>
+
+</div>
+</div>
 
 <script>
-let cart=[];
-function add(name,price){cart.push({name,price});render();openCart()}
-function render(){
- document.getElementById('count').textContent=cart.length;
- let box=document.getElementById('cartItems'); box.innerHTML='';
- let total=0;
- cart.forEach((x,i)=>{total+=x.price;box.innerHTML+=`<div class="item"><span>${x.name}</span><b>${x.price} DH</b></div>`});
- document.getElementById('total').textContent='المجموع: '+total+' DH';
- let msg='السلام عليكم، أريد طلب:%0A'+cart.map(x=>'• '+x.name+' — '+x.price+' DH').join('%0A')+'%0A%0Aالمجموع: '+total+' DH';
- document.getElementById('send').href='https://wa.me/212715136475?text='+msg;
+
+const products=[
+
+{
+id:1,
+name:"مجموعة مكياج كاملة",
+cat:"مكياج",
+price:149,
+img:"https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=700&q=80",
+desc:"مجموعة أنيقة لإطلالة يومية ومميزة."
+},
+
+{
+id:2,
+name:"أحمر شفاه فاخر",
+cat:"مكياج",
+price:49,
+img:"https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=700&q=80",
+desc:"لون جذاب ولمسة أنيقة للشفاه."
+},
+
+{
+id:3,
+name:"لوحة ظلال العيون",
+cat:"مكياج",
+price:89,
+img:"https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=700&q=80",
+desc:"ألوان متعددة لإطلالات مختلفة."
+},
+
+{
+id:4,
+name:"ماسكارا للرموش",
+cat:"مكياج",
+price:59,
+img:"https://images.unsplash.com/photo-1631214524020-7e18db9a8f92?auto=format&fit=crop&w=700&q=80",
+desc:"لإطلالة رموش أكثر أناقة."
+},
+
+{
+id:5,
+name:"عطر نسائي Rose",
+cat:"عطور",
+price:129,
+img:"https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=700&q=80",
+desc:"رائحة أنثوية ناعمة وأنيقة."
+},
+
+{
+id:6,
+name:"عطر نسائي Luxury",
+cat:"عطور",
+price:179,
+img:"https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=700&q=80",
+desc:"عطر فاخر للمناسبات والإطلالات الخاصة."
+},
+
+{
+id:7,
+name:"عطر Vanilla",
+cat:"عطور",
+price:119,
+img:"https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=700&q=80",
+desc:"رائحة دافئة وحلوة لمحبات الفانيلا."
+},
+
+{
+id:8,
+name:"عطر Floral",
+cat:"عطور",
+price:139,
+img:"https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=700&q=80",
+desc:"نفحات زهرية ناعمة ومنعشة."
+},
+
+{
+id:9,
+name:"غسول الوجه المنعش",
+cat:"بشرة",
+price:69,
+img:"https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=700&q=80",
+desc:"روتين تنظيف لطيف للبشرة."
+},
+
+{
+id:10,
+name:"كريم ترطيب الوجه",
+cat:"بشرة",
+price:79,
+img:"https://images.unsplash.com/photo-1620916566398-39f1143ab7ba?auto=format&fit=crop&w=700&q=80",
+desc:"ترطيب يومي لبشرة ناعمة."
+},
+
+{
+id:11,
+name:"سيروم العناية بالبشرة",
+cat:"بشرة",
+price:99,
+img:"https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?auto=format&fit=crop&w=700&q=80",
+desc:"إضافة جميلة إلى روتين العناية."
+},
+
+{
+id:12,
+name:"ماسك للوجه",
+cat:"بشرة",
+price:55,
+img:"https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=700&q=80",
+desc:"جلسة عناية منزلية منعشة."
+},
+
+{
+id:13,
+name:"شامبو العناية بالشعر",
+cat:"شعر",
+price:65,
+img:"https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=700&q=80",
+desc:"لروتين شعر نظيف ومنتعش."
+},
+
+{
+id:14,
+name:"بلسم الشعر",
+cat:"شعر",
+price:65,
+img:"https://images.unsplash.com/photo-1522338242992-e1a54906a8da?auto=format&fit=crop&w=700&q=80",
+desc:"عناية لطيفة بعد غسل الشعر."
+},
+
+{
+id:15,
+name:"زيت الشعر",
+cat:"شعر",
+price:75,
+img:"https://images.unsplash.com/photo-1626015365107-1c7e8b5b8e0c?auto=format&fit=crop&w=700&q=80",
+desc:"لمسة عناية إضافية للشعر."
+},
+
+{
+id:16,
+name:"ماسك الشعر",
+cat:"شعر",
+price:85,
+img:"https://images.unsplash.com/photo-1527799820374-dcf8a3d3a1c8?auto=format&fit=crop&w=700&q=80",
+desc:"روتين عناية أسبوعي للشعر."
+},
+
+{
+id:17,
+name:"بودرة الوجه",
+cat:"مكياج",
+price:59,
+img:"https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=700&q=80",
+desc:"لمسة نهائية أنيقة للمكياج."
+},
+
+{
+id:18,
+name:"كريم أساس",
+cat:"مكياج",
+price:89,
+img:"https://images.unsplash.com/photo-1526045478516-99145907023c?auto=format&fit=crop&w=700&q=80",
+desc:"قاعدة مكياج لإطلالة متناسقة."
+},
+
+{
+id:19,
+name:"مزيل مكياج",
+cat:"بشرة",
+price:55,
+img:"https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=700&q=80",
+desc:"لإزالة المكياج ضمن روتينك اليومي."
+},
+
+{
+id:20,
+name:"كريم اليدين",
+cat:"بشرة",
+price:45,
+img:"https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?auto=format&fit=crop&w=700&q=80",
+desc:"عناية يومية لليدين."
+},
+
+{
+id:21,
+name:"رذاذ شعر معطر",
+cat:"شعر",
+price:69,
+img:"https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=700&q=80",
+desc:"لمسة عطرية لطيفة للشعر."
+},
+
+{
+id:22,
+name:"عطر Musk",
+cat:"عطور",
+price:149,
+img:"https://images.unsplash.com/photo-1610461888750-10bfc601b8a7?auto=format&fit=crop&w=700&q=80",
+desc:"رائحة ناعمة وأنيقة."
+},
+
+{
+id:23,
+name:"طقم عناية نسائي",
+cat:"بشرة",
+price:159,
+img:"https://images.unsplash.com/photo-1556229010-aa3f7ff66b24?auto=format&fit=crop&w=700&q=80",
+desc:"مجموعة جميلة لروتين العناية."
+},
+
+{
+id:24,
+name:"طقم جمال فاخر",
+cat:"مكياج",
+price:199,
+img:"https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=700&q=80",
+desc:"اختيار مميز لمحبات الجمال والأناقة."
 }
-function openCart(){document.getElementById('drawer').classList.add('open')}
-function closeCart(){document.getElementById('drawer').classList.remove('open')}
+
+];
+
+let category="الكل";
+let cart=JSON.parse(localStorage.getItem("queenCart")||"[]");
+
+function saveCart(){
+localStorage.setItem("queenCart",JSON.stringify(cart));
+updateCartCount();
+}
+
+function filterCat(cat,button){
+category=cat;
+document.querySelectorAll(".categories button")
+.forEach(b=>b.classList.remove("active"));
+
+button.classList.add("active");
+renderProducts();
+}
+
+function renderProducts(){
+
+const search=document.getElementById("search").value.toLowerCase().trim();
+
+const list=products.filter(p=>
+(category==="الكل"||p.cat===category) &&
+(p.name.toLowerCase().includes(search)||p.desc.toLowerCase().includes(search))
+);
+
+const box=document.getElementById("products");
+
+if(!list.length){
+box.innerHTML='<div class="empty">😔 لم نجد أي منتج بهذا الاسم</div>';
+return;
+}
+
+box.innerHTML=list.map(p=>`
+
+<div class="card">
+
+<img src="${p.img}" alt="${p.name}">
+
+<div class="card-body">
+
+<span class="badge">${p.cat}</span>
+
+<h3>${p.name}</h3>
+
+<p>${p.desc}</p>
+
+<div class="price">${p.price} DH</div>
+
+<div class="actions">
+
+<button class="add" onclick="addToCart(${p.id})">
+🛒 أضف
+</button>
+
+<button class="buy" onclick="buyNow(${p.id})">
+💬 اطلب
+</button>
+
+</div>
+
+</div>
+</div>
+
+`).join("");
+
+}
+
+function addToCart(id){
+
+const item=cart.find(x=>x.id===id);
+
+if(item){
+item.qty++;
+}else{
+cart.push({id:id,qty:1});
+}
+
+saveCart();
+
+}
+
+function buyNow(id){
+
+addToCart(id);
+openCart();
+
+}
+
+function updateCartCount(){
+
+const count=cart.reduce((sum,x)=>sum+x.qty,0);
+
+document.getElementById("cartCount").textContent=count;
+
+}
+
+function openCart(){
+
+document.getElementById("overlay").style.display="block";
+renderCart();
+
+}
+
+function closeCart(){
+
+document.getElementById("overlay").style.display="none";
+
+}
+
+function changeQty(id,amount){
+
+const item=cart.find(x=>x.id===id);
+
+if(!item)return;
+
+item.qty+=amount;
+
+if(item.qty<=0){
+cart=cart.filter(x=>x.id!==id);
+}
+
+saveCart();
+renderCart();
+
+}
+
+function removeItem(id){
+
+cart=cart.filter(x=>x.id!==id);
+
+saveCart();
+renderCart();
+
+}
+
+function renderCart(){
+
+const box=document.getElementById("cartItems");
+
+if(!cart.length){
+
+box.innerHTML='<div class="empty">🛍️ السلة فارغة<br><br>اختاري منتجاتك الجميلة أولاً 💕</div>';
+
+document.getElementById("cartTotal").textContent="المجموع: 0 DH";
+
+return;
+
+}
+
+let total=0;
+
+box.innerHTML=cart.map(item=>{
+
+const p=products.find(x=>x.id===item.id);
+
+const subtotal=p.price*item.qty;
+
+total+=subtotal;
+
+return `
+
+<div class="cart-item">
+
+<img src="${p.img}">
+
+<div class="cart-info">
+
+<h4>${p.name}</h4>
+
+<b>${p.price} DH</b>
+
+<div class="qty">
+
+<button onclick="changeQty(${p.id},-1)">−</button>
+
+<span>${item.qty}</span>
+
+<button onclick="changeQty(${p.id},1)">+</button>
+
+<button class="remove" onclick="removeItem(${p.id})">🗑️</button>
+
+</div>
+
+</div>
+
+</div>
+
+`;
+
+}).join("");
+
+document.getElementById("cartTotal").textContent=
+"المجموع: "+total+" DH";
+
+}
+
+function sendWhatsApp(){
+
+if(!cart.length){
+
+alert("السلة فارغة. أضف منتجًا أولاً.");
+
+return;
+
+}
+
+let message="👑 *QUEEN BEAUTY*%0A";
+message+="━━━━━━━━━━━━%0A";
+message+="🛍️ *طلب جديد*%0A%0A";
+
+let total=0;
+
+cart.forEach(item=>{
+
+const p=products.find(x=>x.id===item.id);
+
+const subtotal=p.price*item.qty;
+
+total+=subtotal;
+
+message+="💄 "+encodeURIComponent(p.name)+"%0A";
+message+="الكمية: "+item.qty+"%0A";
+message+="السعر: "+subtotal+" DH%0A%0A";
+
+});
+
+message+="━━━━━━━━━━━━%0A";
+message+="💰 *المجموع: "+total+" DH*%0A%0A";
+message+="📍 الاسم:%0A";
+message+="📍 العنوان:%0A";
+message+="📞 الهاتف:%0A%0A";
+message+="شكراً لاختياركم QUEEN BEAUTY 👑💕";
+
+const phone="212715136475";
+
+window.open(
+"https://wa.me/"+phone+"?text="+message,
+"_blank"
+);
+
+}
+
+document.getElementById("overlay").addEventListener("click",function(e){
+
+if(e.target===this){
+closeCart();
+}
+
+});
+
+renderProducts();
+updateCartCount();
+
 </script>
+
 </body>
 </html>
