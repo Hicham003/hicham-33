@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Queen Beauty | جمالك يستحق الأفضل</title>
+<meta name="description" content="متجر Queen Beauty للمكياج والعطور ومنتجات العناية بالوجه والشعر. الطلب مباشرة عبر واتساب.">
+<style>
+:root{--pink:#d83f67;--dark:#35141f;--soft:#fff1f5;--gold:#c99a28}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Tahoma,sans-serif;color:var(--dark);background:#fff}
+a{text-decoration:none;color:inherit}.top{background:#ffe1ea;padding:10px;text-align:center;font-size:14px}
+nav{height:78px;display:flex;align-items:center;justify-content:space-between;padding:0 7%;border-bottom:1px solid #f5d9e1;background:#fff;position:sticky;top:0;z-index:5}
+.logo{font-family:Georgia,serif;font-size:29px;font-weight:bold;color:var(--pink)}.logo span{display:block;font-family:Arial;font-size:12px;text-align:center;color:#555}
+.cart{font-size:25px;cursor:pointer}.hero{min-height:470px;background:linear-gradient(90deg,#fff2f5,#fff);display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:45px 7%;gap:30px}
+.hero h1{font-size:48px;margin:0 0 18px;color:#bf3156}.hero p{font-size:20px;line-height:1.8}.btn{display:inline-block;background:var(--pink);color:#fff;padding:13px 27px;border-radius:30px;border:0;font-size:17px;cursor:pointer}
+.hero img{width:100%;max-height:390px;object-fit:cover;border-radius:25px;box-shadow:0 12px 35px #d83f6722}
+section{padding:48px 7%}.title{text-align:center;font-size:30px;margin:0 0 28px}.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.cat{background:var(--soft);border:1px solid #f4ccd7;border-radius:20px;padding:25px;text-align:center;font-size:20px}.cat i{font-size:48px;display:block;margin-bottom:8px}
+.products{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}.card{border:1px solid #eee;border-radius:18px;overflow:hidden;background:#fff;box-shadow:0 4px 18px #00000009}.card img{width:100%;height:210px;object-fit:cover}.card-body{padding:13px;text-align:center}.card h3{font-size:17px;margin:5px 0 9px}.price{font-weight:bold;color:#9e1f40;font-size:20px;margin:8px}.order{width:100%;padding:10px;border:0;border-radius:12px;background:var(--pink);color:white;cursor:pointer}
+.features{background:var(--soft);display:grid;grid-template-columns:repeat(4,1fr);text-align:center;gap:20px}.feature{font-size:18px}.feature b{display:block;font-size:38px;margin-bottom:8px}
+footer{background:#ffdce7;padding:35px 7%;text-align:center}.wa{display:inline-block;background:#16b95a;color:white;padding:15px 35px;border-radius:30px;font-size:22px;font-weight:bold}
+.drawer{position:fixed;inset:0 0 0 auto;width:min(420px,92%);background:#fff;z-index:20;box-shadow:-8px 0 30px #0002;transform:translateX(110%);transition:.3s;padding:25px;overflow:auto}.drawer.open{transform:translateX(0)}
+.item{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #eee;padding:12px 0}.close{float:left;border:0;background:none;font-size:28px}.total{font-size:22px;font-weight:bold;margin:20px 0}.send{display:block;text-align:center;background:#16b95a;color:#fff;padding:14px;border-radius:12px;font-weight:bold}
+@media(max-width:850px){.hero{grid-template-columns:1fr;text-align:center}.hero h1{font-size:36px}.cats{grid-template-columns:repeat(2,1fr)}.products{grid-template-columns:repeat(2,1fr)}.features{grid-template-columns:repeat(2,1fr)}nav{padding:0 4%}}
+@media(max-width:480px){.products{grid-template-columns:1fr}.features{grid-template-columns:1fr}.hero{padding:30px 5%}section{padding:35px 5%}}
+</style>
+</head>
+<body>
+<div class="top">🎁 الدفع عند الاستلام &nbsp; | &nbsp; 💎 منتجات أصلية &nbsp; | &nbsp; 🚚 توصيل سريع</div>
+<nav>
+<div class="cart" onclick="openCart()">🛍️ <span id="count">0</span></div>
+<div class="logo">♕ Queen Beauty<span>جمالك... ثقتك... تميزك</span></div>
+<div>☰</div>
+</nav>
+
+<header class="hero">
+<div>
+<h1>جمالك يستحق الأفضل ✨</h1>
+<p>تشكيلة راقية من المكياج والعطور ومنتجات العناية بالبشرة والشعر، مختارة لتمنحك إطلالة أنيقة وإحساساً بالثقة كل يوم.</p>
+<button class="btn" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">تسوقي الآن</button>
+</div>
+<img src="queen-beauty-preview.png" alt="Queen Beauty">
+</header>
+
+<section>
+<h2 class="title">تسوقي حسب التصنيف</h2>
+<div class="cats">
+<div class="cat"><i>💄</i>المكياج</div><div class="cat"><i>🌸</i>العطور</div>
+<div class="cat"><i>🧴</i>منظفات الوجه</div><div class="cat"><i>✨</i>منظفات الشعر</div>
+</div>
+</section>
+
+<section id="products">
+<h2 class="title">منتجات مميزة 💕</h2>
+<div class="products">
+<div class="card"><img src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=700&q=80"><div class="card-body"><h3>عطر نسائي فاخر</h3><div class="price">350 DH</div><button class="order" onclick="add('عطر نسائي فاخر',350)">اطلبي الآن</button></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=700&q=80"><div class="card-body"><h3>أحمر شفاه أنيق</h3><div class="price">120 DH</div><button class="order" onclick="add('أحمر شفاه أنيق',120)">اطلبي الآن</button></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=700&q=80"><div class="card-body"><h3>غسول لطيف للوجه</h3><div class="price">150 DH</div><button class="order" onclick="add('غسول لطيف للوجه',150)">اطلبي الآن</button></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=700&q=80"><div class="card-body"><h3>غسول للبشرة</h3><div class="price">140 DH</div><button class="order" onclick="add('غسول للبشرة',140)">اطلبي الآن</button></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=700&q=80"><div class="card-body"><h3>شامبو للعناية بالشعر</h3><div class="price">85 DH</div><button class="order" onclick="add('شامبو للعناية بالشعر',85)">اطلبي الآن</button></div></div>
+</div>
+</section>
+
+<section class="features">
+<div class="feature"><b>🛡️</b><strong>منتجات موثوقة</strong><br>جودة نهتم بها</div>
+<div class="feature"><b>🚚</b><strong>توصيل سريع</strong><br>حسب منطقتك</div>
+<div class="feature"><b>🎁</b><strong>الدفع عند الاستلام</strong><br>راحة وأمان</div>
+<div class="feature"><b>💗</b><strong>خدمة مميزة</strong><br>نحن هنا لخدمتك</div>
+</section>
+
+<footer>
+<h2>تواصلي معنا على الواتساب 💬</h2>
+<a class="wa" href="https://wa.me/212715136475" target="_blank">واتساب: 0715136475</a>
+<p>Queen Beauty — أنتِ دائماً الأجمل ♕</p>
+</footer>
+
+<aside class="drawer" id="drawer">
+<button class="close" onclick="closeCart()">×</button><h2>🛍️ سلة المشتريات</h2>
+<div id="cartItems"></div><div class="total" id="total">المجموع: 0 DH</div>
+<a class="send" id="send" href="#" target="_blank">إرسال الطلب عبر واتساب</a>
+</aside>
+
+<script>
+let cart=[];
+function add(name,price){cart.push({name,price});render();openCart()}
+function render(){
+ document.getElementById('count').textContent=cart.length;
+ let box=document.getElementById('cartItems'); box.innerHTML='';
+ let total=0;
+ cart.forEach((x,i)=>{total+=x.price;box.innerHTML+=`<div class="item"><span>${x.name}</span><b>${x.price} DH</b></div>`});
+ document.getElementById('total').textContent='المجموع: '+total+' DH';
+ let msg='السلام عليكم، أريد طلب:%0A'+cart.map(x=>'• '+x.name+' — '+x.price+' DH').join('%0A')+'%0A%0Aالمجموع: '+total+' DH';
+ document.getElementById('send').href='https://wa.me/212715136475?text='+msg;
+}
+function openCart(){document.getElementById('drawer').classList.add('open')}
+function closeCart(){document.getElementById('drawer').classList.remove('open')}
+</script>
+</body>
+</html>
